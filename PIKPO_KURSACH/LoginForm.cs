@@ -97,12 +97,14 @@ namespace PIKPO_KURSACH
                             {
                                 profilelogin = textBox_login.Text;
                                 profilepassword = textBox_password.Text;
+                                userForm.import(login, password);
                                 userForm.Show();
                             }
 
                             else if (textBox_login.Text.Trim() == admin && textBox_password.Text.Trim() == adminPass)
                             {
                                 userForm.Close();
+                                adminForm.import(admin, adminPass);
                                 adminForm.Show();
                             }
 
@@ -125,7 +127,7 @@ namespace PIKPO_KURSACH
             {
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
-            //row.Close();
+            row.Close();
             con.Close();
         }
 

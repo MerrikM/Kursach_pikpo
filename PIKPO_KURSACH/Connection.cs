@@ -14,12 +14,12 @@ namespace PIKPO_KURSACH
     class Connection
     {
         //SQLiteConnection conn = new SQLiteConnection("Data Source = D:/DB/database.db");
-        SQLiteConnection conn = new SQLiteConnection("Data Source = D:/DB/database.db");
+        SQLiteConnection conn = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
         public bool Open()
         {
             try
             {
-                conn = new SQLiteConnection("Data Source = D:/DB/database.db");
+                conn = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
                 conn.Open();
                 return true;
             }

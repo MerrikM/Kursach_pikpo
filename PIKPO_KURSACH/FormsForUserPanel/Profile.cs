@@ -17,20 +17,12 @@ namespace PIKPO_KURSACH.FormsForUserPanel
         {
             InitializeComponent();
             LoginForm loginform = new LoginForm();
-            login.Text = loginform.textBox_login.Text;
-            password.Text = loginform.textBox_password.Text;
         }
 
-        public string Login
+        public void importprof(string _l, string _p)
         {
-            get { return login.Text; }
-            set { login.Text = value; }
-        }
-
-        public string Password
-        {
-            get { return password.Text; }
-            set { password.Text = value; }
+            login.Text = _l;
+            password.Text = _p;
         }
 
         private void button_exit_Click(object sender, EventArgs e)

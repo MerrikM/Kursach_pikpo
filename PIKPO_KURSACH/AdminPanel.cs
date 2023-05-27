@@ -13,7 +13,15 @@ namespace PIKPO_KURSACH
 {
     public partial class AdminPanel : Form
     {
-        
+
+        public string login;
+        public string password;
+        public void import(string _l, string _p)
+        {
+            login = _l;
+            password = _p;
+        }
+
         public AdminPanel()
         {
             InitializeComponent();

@@ -88,11 +88,11 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
         {
             try
             {
-                if(e.ColumnIndex == 6)
+                if (e.ColumnIndex == 6)
                 {
                     string cmd = dgvViewer.Rows[e.RowIndex].Cells[6].Value.ToString(); // Получили текст из линк лейбла
 
-                    if(cmd == "Delete")
+                    if (cmd == "Delete")
                     {
                         if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
@@ -104,7 +104,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
                             Refresh();
                         }
                     }
-                    else if(cmd == "Insert")
+                    else if (cmd == "Insert")
                     {
                         int rowIndex = dgvViewer.Rows.Count - 2;
                         DataRow row = dataSet.Tables["Books"].NewRow();
@@ -124,7 +124,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
 
                         Refresh();
                     }
-                    else if(cmd == "Update")
+                    else if (cmd == "Update")
                     {
                         dataSet.Tables["Books"].Rows[e.RowIndex]["authors"] = dgvViewer.Rows[e.RowIndex].Cells["authors"].Value;
                         dataSet.Tables["Books"].Rows[e.RowIndex]["title"] = dgvViewer.Rows[e.RowIndex].Cells["title"].Value;
@@ -150,7 +150,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
         {
             try
             {
-                if(cmdRow == false)
+                if (cmdRow == false)
                 {
                     cmdRow = true;
                     int lastRow = dgvViewer.Rows.Count - 2;
@@ -170,7 +170,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
 
         private void book_catalog_Load(object sender, EventArgs e)
         {
-            sQLiteConnection = new SQLiteConnection("Data Source = D:/DB/database.db");
+            sQLiteConnection = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
             sQLiteConnection.Open();
             LoadData();
         }
@@ -211,7 +211,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
         private void columnValue(object sender, KeyPressEventArgs e)
         {
             // Проверка на то, что введена цифра, а не любая другая кнопка
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -227,7 +227,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             {
                 (dgvViewer.DataSource as DataTable).DefaultView.RowFilter = null;
             }
-            
+
         }
     }
 }

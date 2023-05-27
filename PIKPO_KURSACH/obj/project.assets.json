@@ -1162,11 +1162,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Kursach\\Kursach_pikpo-main\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
+      "projectUniqueName": "C:\\Users\\merri\\Desktop\\kurshach\\Kursach_pikpo\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
       "projectName": "PIKPO_KURSACH",
-      "projectPath": "F:\\Kursach\\Kursach_pikpo-main\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
+      "projectPath": "C:\\Users\\merri\\Desktop\\kurshach\\Kursach_pikpo\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
       "packagesPath": "C:\\Users\\merri\\.nuget\\packages\\",
-      "outputPath": "F:\\Kursach\\Kursach_pikpo-main\\PIKPO_KURSACH\\obj\\",
+      "outputPath": "C:\\Users\\merri\\Desktop\\kurshach\\Kursach_pikpo\\PIKPO_KURSACH\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\merri\\AppData\\Roaming\\NuGet\\NuGet.Config",

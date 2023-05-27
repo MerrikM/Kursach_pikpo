@@ -34,7 +34,7 @@ namespace PIKPO_KURSACH
             this.search_button = new System.Windows.Forms.Button();
             this.button_profile = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,12 +52,12 @@ namespace PIKPO_KURSACH
             // 
             this.search_textBox1.Location = new System.Drawing.Point(13, 9);
             this.search_textBox1.Name = "search_textBox1";
-            this.search_textBox1.Size = new System.Drawing.Size(100, 23);
+            this.search_textBox1.Size = new System.Drawing.Size(127, 23);
             this.search_textBox1.TabIndex = 1;
             // 
             // search_button
             // 
-            this.search_button.Location = new System.Drawing.Point(120, 9);
+            this.search_button.Location = new System.Drawing.Point(146, 9);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(75, 23);
             this.search_button.TabIndex = 2;
@@ -84,22 +84,22 @@ namespace PIKPO_KURSACH
             this.button_exit.UseVisualStyleBackColor = true;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
-            // button1
+            // save
             // 
-            this.button1.Location = new System.Drawing.Point(256, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.save.Location = new System.Drawing.Point(382, 9);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 5;
+            this.save.Text = "Сохранить";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_profile);
             this.Controls.Add(this.search_button);
@@ -121,6 +121,6 @@ namespace PIKPO_KURSACH
         private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.Button button_profile;
         private System.Windows.Forms.Button button_exit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button save;
     }
 }
