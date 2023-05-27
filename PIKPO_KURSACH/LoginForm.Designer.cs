@@ -130,15 +130,14 @@ namespace PIKPO_KURSACH
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox_login;
-        private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label error;
         private System.Windows.Forms.Button registration;
         private System.Windows.Forms.Label label_login;
         private System.Windows.Forms.Label label_password;
+        public System.Windows.Forms.TextBox textBox_login;
+        public System.Windows.Forms.TextBox textBox_password;
     }
 }
 

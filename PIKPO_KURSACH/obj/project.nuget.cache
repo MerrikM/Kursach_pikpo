@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6GuUEyrjzHMLEBCPpi+UHrjmQPO5xtZ5CulNVlEXiZ9tWFyr8h6QXVeqXac233rIODdrxVm7LIUjoSdZJOS3sQ==",
+  "dgSpecHash": "Yo21VJX6FvOhH3y6+24nYy/3d6D3gdDyoJerGBn/zsSCKrX5zTcTgWExKWZQOTqA/D9hpSKR9yiXga39Q/sA1A==",
   "success": true,
-  "projectFilePath": "D:\\C++ Project\\PIKPO_KURSACH\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
+  "projectFilePath": "F:\\Kursach\\Kursach_pikpo-main\\PIKPO_KURSACH\\PIKPO_KURSACH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\merri\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\merri\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

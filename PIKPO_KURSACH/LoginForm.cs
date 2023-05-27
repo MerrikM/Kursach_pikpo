@@ -16,6 +16,7 @@ namespace PIKPO_KURSACH
         //private SQLiteConnection login = new SQLiteConnection("Data Source = D:/C++ Project/PIKPO_KURSACH/database.db");
         Connection con = new Connection();
         string id, login, password;
+        public string profilelogin, profilepassword;
         public LoginForm()
         {
             InitializeComponent();
@@ -94,6 +95,8 @@ namespace PIKPO_KURSACH
 
                             if (textBox_login.Text.Trim() == login && textBox_password.Text.Trim() == password)
                             {
+                                profilelogin = textBox_login.Text;
+                                profilepassword = textBox_password.Text;
                                 userForm.Show();
                             }
 
