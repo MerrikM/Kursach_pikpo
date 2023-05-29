@@ -31,7 +31,6 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
         {
             this.dgvViewer = new System.Windows.Forms.DataGridView();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -40,11 +39,9 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             // 
             // dgvViewer
             // 
-            this.dgvViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvViewer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgvViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewer.Location = new System.Drawing.Point(12, 12);
+            this.dgvViewer.Location = new System.Drawing.Point(12, 43);
             this.dgvViewer.Name = "dgvViewer";
             this.dgvViewer.RowTemplate.Height = 25;
             this.dgvViewer.Size = new System.Drawing.Size(704, 398);
@@ -56,8 +53,8 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             // 
             // btn_exit
             // 
-            this.btn_exit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_exit.Location = new System.Drawing.Point(821, 387);
+            this.btn_exit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_exit.Location = new System.Drawing.Point(641, 448);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 1;
@@ -65,30 +62,20 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_save.Location = new System.Drawing.Point(722, 387);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
-            this.btn_save.TabIndex = 2;
-            this.btn_save.Text = "Сохранить";
-            this.btn_save.UseVisualStyleBackColor = true;
-            // 
             // textBox_search
             // 
-            this.textBox_search.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox_search.Location = new System.Drawing.Point(722, 12);
+            this.textBox_search.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_search.Location = new System.Drawing.Point(12, 12);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(116, 23);
+            this.textBox_search.Size = new System.Drawing.Size(127, 23);
             this.textBox_search.TabIndex = 3;
             // 
             // button_search
             // 
-            this.button_search.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button_search.Location = new System.Drawing.Point(844, 12);
+            this.button_search.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button_search.Location = new System.Drawing.Point(143, 12);
             this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(51, 23);
+            this.button_search.Size = new System.Drawing.Size(75, 23);
             this.button_search.TabIndex = 4;
             this.button_search.Text = "Поиск";
             this.button_search.UseVisualStyleBackColor = true;
@@ -98,16 +85,15 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 420);
+            this.ClientSize = new System.Drawing.Size(730, 483);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.textBox_search);
-            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.dgvViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "book_catalog";
-            this.Text = "book_catalog";
+            this.Text = "Book Catalog";
             this.Load += new System.EventHandler(this.book_catalog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewer)).EndInit();
             this.ResumeLayout(false);
@@ -119,7 +105,6 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
 
         private System.Windows.Forms.DataGridView dgvViewer;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Button button_search;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

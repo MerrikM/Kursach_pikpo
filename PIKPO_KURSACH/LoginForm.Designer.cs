@@ -124,7 +124,7 @@ namespace PIKPO_KURSACH
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.Text = "Authorization form";
             this.ResumeLayout(false);
             this.PerformLayout();
 

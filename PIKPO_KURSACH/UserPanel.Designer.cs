@@ -40,7 +40,7 @@ namespace PIKPO_KURSACH
             // dgvViewer
             // 
             this.dgvViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewer.Location = new System.Drawing.Point(2, 38);
+            this.dgvViewer.Location = new System.Drawing.Point(12, 38);
             this.dgvViewer.Name = "dgvViewer";
             this.dgvViewer.RowTemplate.Height = 25;
             this.dgvViewer.Size = new System.Drawing.Size(746, 411);
@@ -49,14 +49,14 @@ namespace PIKPO_KURSACH
             // 
             // search_textBox1
             // 
-            this.search_textBox1.Location = new System.Drawing.Point(2, 9);
+            this.search_textBox1.Location = new System.Drawing.Point(12, 9);
             this.search_textBox1.Name = "search_textBox1";
             this.search_textBox1.Size = new System.Drawing.Size(127, 23);
             this.search_textBox1.TabIndex = 1;
             // 
             // search_button
             // 
-            this.search_button.Location = new System.Drawing.Point(135, 9);
+            this.search_button.Location = new System.Drawing.Point(145, 9);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(75, 23);
             this.search_button.TabIndex = 5;
@@ -65,7 +65,7 @@ namespace PIKPO_KURSACH
             // 
             // button_profile
             // 
-            this.button_profile.Location = new System.Drawing.Point(662, 9);
+            this.button_profile.Location = new System.Drawing.Point(683, 9);
             this.button_profile.Name = "button_profile";
             this.button_profile.Size = new System.Drawing.Size(75, 23);
             this.button_profile.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace PIKPO_KURSACH
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(662, 455);
+            this.button_exit.Location = new System.Drawing.Point(689, 455);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(75, 23);
             this.button_exit.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace PIKPO_KURSACH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 486);
+            this.ClientSize = new System.Drawing.Size(770, 486);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_profile);
             this.Controls.Add(this.search_button);
