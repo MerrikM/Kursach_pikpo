@@ -17,6 +17,9 @@ namespace PIKPO_KURSACH
         Connection con = new Connection();
         string id, login, password;
         public string profilelogin, profilepassword;
+
+        DB db = new DB();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -24,7 +27,6 @@ namespace PIKPO_KURSACH
 
         private void registration_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
             try
             {
                 if (textBox_login.Text != "" && textBox_password.Text != "")
@@ -73,33 +75,22 @@ namespace PIKPO_KURSACH
 
                 if (textBox_login.Text != "" && textBox_password.Text != "")
                 {
-                    if (row.HasRows)
+                    if(row.HasRows)
                     {
-                        bool passed = false;
-                        
-                        while (row.Read())
+                        while(row.Read())
                         {
-                            id = row["id"].ToString();
-                            login = row["login"].ToString();
-                            password = row["password"].ToString();
-                            string admin = row["login"].ToString();
-                            admin = "admin";
-                            string adminPass = row["password"].ToString();
-                            adminPass = "123";
-
-                            if (textBox_login.Text.Trim() == login && textBox_password.Text.Trim() == password)
+                            if (db.check_admin(textBox_login.Text.Trim(), textBox_password.Text.Trim()) == true)
+                            {
+                                userForm.Close();
+                                adminForm.import(profilelogin, profilepassword);
+                                adminForm.Show();
+                            }
+                            else if (db.check_user(textBox_login.Text.Trim(), textBox_password.Text.Trim()) == true)
                             {
                                 profilelogin = textBox_login.Text;
                                 profilepassword = textBox_password.Text;
-                                userForm.import(login, password);
+                                userForm.import(profilelogin, profilepassword);
                                 userForm.Show();
-                            }
-
-                            else if (textBox_login.Text.Trim() == admin && textBox_password.Text.Trim() == adminPass)
-                            {
-                                userForm.Close();
-                                adminForm.import(admin, adminPass);
-                                adminForm.Show();
                             }
                             else
                             {
@@ -107,7 +98,6 @@ namespace PIKPO_KURSACH
                                 error.ForeColor = Color.Red;
                             }
                         }
-                        
                     }
                 }
                 else

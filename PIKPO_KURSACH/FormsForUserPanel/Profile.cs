@@ -18,18 +18,14 @@ namespace PIKPO_KURSACH.FormsForUserPanel
             InitializeComponent();
             LoginForm loginform = new LoginForm();
         }
-
         public void importprof(string _l, string _p)
         {
             login.Text = _l;
             password.Text = _p;
         }
-
         private void button_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
     }
 }

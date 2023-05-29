@@ -27,6 +27,79 @@ namespace PIKPO_KURSACH
             row.Close();
             con.Close();
         }
+
+        public bool check_user(string login, string password)
+        {
+            this.login = login;
+            this.password = password;
+            con.Open();
+            SQLiteDataReader row;
+            string query = "SELECT * FROM Users";
+            row = con.ExecuteReader(query);
+
+            try
+            {
+                if(row.HasRows)
+                {
+                    while(row.Read())
+                    {
+                        string id = row["id"].ToString();
+                        string userlogin = row["login"].ToString();
+                        string userpassword = row["password"].ToString();
+
+                        if(this.login == userlogin && this.password == userpassword)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Ошибка подключения к БД " + ex.Message);
+            }
+            row.Close();
+            con.Close();
+            return false;
+        }
+
+        public bool check_admin(string login, string password)
+        {
+            this.login = login;
+            this.password = password;
+
+            con.Open();
+            SQLiteDataReader row;
+            string query = "SELECT * FROM Users";
+            row = con.ExecuteReader(query);
+
+            try
+            {
+                if (row.HasRows)
+                {
+                    while (row.Read())
+                    {
+                        string id = row["id"].ToString();
+                        string adminlogin = row["login"].ToString();
+                        string adminpassword = row["password"].ToString();
+                        adminlogin = "admin";
+                        adminpassword = "123";
+
+                        if (this.login == adminlogin && this.password == adminpassword)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка подключения к БД " + ex.Message);
+            }
+            row.Close();
+            con.Close();
+            return false;
+        }
     }
 }
 

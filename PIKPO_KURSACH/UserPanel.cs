@@ -159,9 +159,7 @@ namespace PIKPO_KURSACH
             try
             {
                 dataSet.Tables["Books"].Clear();
-
                 sqliteDataAdapter.Fill(dataSet, "Books");
-
                 dgvViewer.DataSource = dataSet.Tables["Books"];
 
                 for (int i = 0; i < dgvViewer.Rows.Count; i++)
