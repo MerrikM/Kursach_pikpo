@@ -24,11 +24,7 @@ namespace PIKPO_KURSACH
 
         private void registration_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SQLiteDataReader row;
-            string query = "SELECT * FROM Users";
-            row = con.ExecuteReader(query);
-
+            DB db = new DB();
             try
             {
                 if (textBox_login.Text != "" && textBox_password.Text != "")
@@ -39,9 +35,8 @@ namespace PIKPO_KURSACH
                     {
                         try
                         {
-                            string add = "INSERT INTO Users ('login', 'password') VALUES ('" + textBox_login.Text + "' , '" + textBox_password.Text + "')";
-                            con.ExecuteNonQuery(add);
-                            //MessageBox.Show("Пользователь успешно зарегестрирован");
+                            db.add_user(textBox_login.Text.Trim(), textBox_password.Text.Trim());
+                            MessageBox.Show("Пользователь успешно зарегестрирован");
                         }
                         catch (SQLiteException ex)
                         {
@@ -61,8 +56,6 @@ namespace PIKPO_KURSACH
             {
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
-            row.Close();
-            con.Close();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -82,12 +75,13 @@ namespace PIKPO_KURSACH
                 {
                     if (row.HasRows)
                     {
+                        bool passed = false;
+                        
                         while (row.Read())
                         {
                             id = row["id"].ToString();
                             login = row["login"].ToString();
                             password = row["password"].ToString();
-
                             string admin = row["login"].ToString();
                             admin = "admin";
                             string adminPass = row["password"].ToString();
@@ -107,16 +101,15 @@ namespace PIKPO_KURSACH
                                 adminForm.import(admin, adminPass);
                                 adminForm.Show();
                             }
-
                             else
                             {
                                 error.Text = "Неверный логин или пароль";
                                 error.ForeColor = Color.Red;
                             }
                         }
+                        
                     }
                 }
-
                 else
                 {
                     error.Text = "Заполните поля «Логин» и «Пароль»";
