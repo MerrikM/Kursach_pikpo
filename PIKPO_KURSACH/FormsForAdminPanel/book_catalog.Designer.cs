@@ -74,7 +74,6 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Сохранить";
             this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // textBox_search
             // 
@@ -105,6 +104,8 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.dgvViewer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "book_catalog";
             this.Text = "book_catalog";
             this.Load += new System.EventHandler(this.book_catalog_Load);

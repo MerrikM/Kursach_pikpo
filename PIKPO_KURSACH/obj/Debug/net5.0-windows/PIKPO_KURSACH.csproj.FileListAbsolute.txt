@@ -100,11 +100,7 @@ C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\bin\Debug\net5.0-win
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.csproj.AssemblyReference.cache
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.AdminPanel.resources
-C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsFromAdminPanel.admission.resources
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsFromAdminPanel.book_catalog.resources
-C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsFromAdminPanel.sale.resources
-C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsFromAdminPanel.search.resources
-C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsFromAdminPanel.supplier_directory.resources
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsForUserPanel.Profile.resources
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.LoginForm.resources
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.UserPanel.resources
@@ -117,3 +113,5 @@ C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-win
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\ref\PIKPO_KURSACH.dll
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.pdb
 C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.genruntimeconfig.cache
+C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.FormsForAdminPanel.Users.resources
+C:\Users\merri\Desktop\kurshach\Kursach_pikpo\PIKPO_KURSACH\obj\Debug\net5.0-windows\PIKPO_KURSACH.Properties.Resources.resources

@@ -29,26 +29,14 @@ namespace PIKPO_KURSACH
         /// </summary>
         private void InitializeComponent()
         {
-            this.supplier_directory = new System.Windows.Forms.Button();
             this.book_catalog = new System.Windows.Forms.Button();
-            this.admission = new System.Windows.Forms.Button();
-            this.sale = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.Button();
+            this.user_button = new System.Windows.Forms.Button();
+            this.exit_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // supplier_directory
-            // 
-            this.supplier_directory.Location = new System.Drawing.Point(80, 85);
-            this.supplier_directory.Name = "supplier_directory";
-            this.supplier_directory.Size = new System.Drawing.Size(209, 23);
-            this.supplier_directory.TabIndex = 0;
-            this.supplier_directory.Text = "Справочник поставщиков";
-            this.supplier_directory.UseVisualStyleBackColor = true;
-            this.supplier_directory.Click += new System.EventHandler(this.supplier_directory_Click);
             // 
             // book_catalog
             // 
-            this.book_catalog.Location = new System.Drawing.Point(80, 120);
+            this.book_catalog.Location = new System.Drawing.Point(12, 82);
             this.book_catalog.Name = "book_catalog";
             this.book_catalog.Size = new System.Drawing.Size(209, 23);
             this.book_catalog.TabIndex = 1;
@@ -56,46 +44,36 @@ namespace PIKPO_KURSACH
             this.book_catalog.UseVisualStyleBackColor = true;
             this.book_catalog.Click += new System.EventHandler(this.book_catalog_Click);
             // 
-            // admission
+            // user_button
             // 
-            this.admission.Location = new System.Drawing.Point(320, 85);
-            this.admission.Name = "admission";
-            this.admission.Size = new System.Drawing.Size(209, 23);
-            this.admission.TabIndex = 2;
-            this.admission.Text = "Поступление";
-            this.admission.UseVisualStyleBackColor = true;
-            this.admission.Click += new System.EventHandler(this.admission_Click);
+            this.user_button.Location = new System.Drawing.Point(13, 112);
+            this.user_button.Name = "user_button";
+            this.user_button.Size = new System.Drawing.Size(208, 23);
+            this.user_button.TabIndex = 2;
+            this.user_button.Text = "Все пользователи";
+            this.user_button.UseVisualStyleBackColor = true;
+            this.user_button.Click += new System.EventHandler(this.user_button_Click);
             // 
-            // sale
+            // exit_button
             // 
-            this.sale.Location = new System.Drawing.Point(320, 120);
-            this.sale.Name = "sale";
-            this.sale.Size = new System.Drawing.Size(209, 23);
-            this.sale.TabIndex = 3;
-            this.sale.Text = "Продажа";
-            this.sale.UseVisualStyleBackColor = true;
-            this.sale.Click += new System.EventHandler(this.sale_Click);
-            // 
-            // search
-            // 
-            this.search.Location = new System.Drawing.Point(200, 160);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(209, 23);
-            this.search.TabIndex = 4;
-            this.search.Text = "Поиск";
-            this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.search_Click);
+            this.exit_button.Location = new System.Drawing.Point(153, 199);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(75, 23);
+            this.exit_button.TabIndex = 3;
+            this.exit_button.Text = "Выход";
+            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 303);
-            this.Controls.Add(this.search);
-            this.Controls.Add(this.sale);
-            this.Controls.Add(this.admission);
+            this.ClientSize = new System.Drawing.Size(240, 234);
+            this.Controls.Add(this.exit_button);
+            this.Controls.Add(this.user_button);
             this.Controls.Add(this.book_catalog);
-            this.Controls.Add(this.supplier_directory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.ResumeLayout(false);
@@ -103,11 +81,8 @@ namespace PIKPO_KURSACH
         }
 
         #endregion
-
-        private System.Windows.Forms.Button supplier_directory;
         private System.Windows.Forms.Button book_catalog;
-        private System.Windows.Forms.Button admission;
-        private System.Windows.Forms.Button sale;
-        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button user_button;
+        private System.Windows.Forms.Button exit_button;
     }
 }

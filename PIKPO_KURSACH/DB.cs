@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace PIKPO_KURSACH
     {
         private string login, password;
         Connection con = new Connection();
+
         public void add_user(string login, string password)
         {
             this.login = login;
@@ -49,6 +51,8 @@ namespace PIKPO_KURSACH
 
                         if(this.login == userlogin && this.password == userpassword)
                         {
+                            row.Close();
+                            con.Close();
                             return true;
                         }
                     }
@@ -58,8 +62,6 @@ namespace PIKPO_KURSACH
             {
                 Console.WriteLine("Ошибка подключения к БД " + ex.Message);
             }
-            row.Close();
-            con.Close();
             return false;
         }
 
@@ -87,6 +89,8 @@ namespace PIKPO_KURSACH
 
                         if (this.login == adminlogin && this.password == adminpassword)
                         {
+                            row.Close();
+                            con.Close();
                             return true;
                         }
                     }
@@ -96,10 +100,7 @@ namespace PIKPO_KURSACH
             {
                 Console.WriteLine("Ошибка подключения к БД " + ex.Message);
             }
-            row.Close();
-            con.Close();
             return false;
         }
     }
 }
-

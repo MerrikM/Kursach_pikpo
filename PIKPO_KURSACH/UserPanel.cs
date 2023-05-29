@@ -27,45 +27,16 @@ namespace PIKPO_KURSACH
             login = _l;
             password = _p;
         }
-
-        public void UpdateSqliteTable()
-        {
-
-            try
-            {
-                con.Open();
-                SQLiteDataReader row;
-                string query = "SELECT * FROM Users WHERE login = ('" + login + "')";
-                row = con.ExecuteReader(query);
-                string add = "UPDATE Users SET buy = buy + 1 WHERE login = ('" + login + "')";
-                //con.Open();
-                con.ExecuteNonQuery(add);
-                row.Close();
-                con.Close();
-
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Ошибка подключения к БД " + exp.Message);
-            }
-        }
-
         public UserPanel()
         {
             InitializeComponent();
         }
-
-        private void LoadData()
+        private void UpdateData()
         {
             try
             {
-                sqliteDataAdapter = new SQLiteDataAdapter("SELECT *, 'Buy' AS [Buy] FROM Books", sQLiteConnection);
-                builder = new SQLiteCommandBuilder(sqliteDataAdapter);
-
-                dataSet = new DataSet();
-
+                dataSet.Tables["Books"].Clear();
                 sqliteDataAdapter.Fill(dataSet, "Books");
-
                 dgvViewer.DataSource = dataSet.Tables["Books"];
 
                 for (int i = 0; i < dgvViewer.Rows.Count; i++)
@@ -79,7 +50,27 @@ namespace PIKPO_KURSACH
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
+        private void LoadData()
+        {
+            try
+            {
+                sqliteDataAdapter = new SQLiteDataAdapter("SELECT *, 'Buy' AS [Buy] FROM Books", sQLiteConnection);
+                builder = new SQLiteCommandBuilder(sqliteDataAdapter);
+                dataSet = new DataSet();
+                sqliteDataAdapter.Fill(dataSet, "Books");
+                dgvViewer.DataSource = dataSet.Tables["Books"];
 
+                for (int i = 0; i < dgvViewer.Rows.Count; i++)
+                {
+                    DataGridViewLinkCell link = new DataGridViewLinkCell();
+                    dgvViewer[6, i] = link;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Ошибка подключения к БД " + exp.Message);
+            }
+        }
         private void UserPanel_Load(object sender, EventArgs e)
         {
             sQLiteConnection = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
@@ -87,19 +78,15 @@ namespace PIKPO_KURSACH
             LoadData();
             sQLiteConnection.Close();
         }
-
         private void button_profile_Click(object sender, EventArgs e)
         {
-            FormsForUserPanel.Profile profile = new FormsForUserPanel.Profile();
-            profile.importprof(login, password);
+            FormsForUserPanel.Profile profile = new FormsForUserPanel.Profile(login, password);
             profile.Show();
         }
-
         private void button_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void dgvViewer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -132,6 +119,9 @@ namespace PIKPO_KURSACH
                                     string add = "UPDATE Users SET buy = buy + 1 WHERE login = ('" + login + "')";
                                     //con.Open();
                                     con.ExecuteNonQuery(add);
+
+                                    UpdateData();
+
                                     row.Close();
                                     con.Close();
                                 }
@@ -153,24 +143,15 @@ namespace PIKPO_KURSACH
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
-
-        private void save_Click(object sender, EventArgs e)
+        private void search_button_Click(object sender, EventArgs e)
         {
-            try
+            if (search_textBox1.Text != "")
             {
-                dataSet.Tables["Books"].Clear();
-                sqliteDataAdapter.Fill(dataSet, "Books");
-                dgvViewer.DataSource = dataSet.Tables["Books"];
-
-                for (int i = 0; i < dgvViewer.Rows.Count; i++)
-                {
-                    DataGridViewLinkCell link = new DataGridViewLinkCell();
-                    dgvViewer[6, i] = link;
-                }
+                (dgvViewer.DataSource as DataTable).DefaultView.RowFilter = $"authors LIKE '%{search_textBox1.Text}'";
             }
-            catch (Exception exp)
+            else
             {
-                MessageBox.Show("Ошибка подключения к БД " + exp.Message);
+                (dgvViewer.DataSource as DataTable).DefaultView.RowFilter = null;
             }
         }
     }

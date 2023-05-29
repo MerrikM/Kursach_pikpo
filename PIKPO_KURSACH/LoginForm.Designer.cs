@@ -121,9 +121,10 @@ namespace PIKPO_KURSACH
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

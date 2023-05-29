@@ -82,7 +82,6 @@ namespace PIKPO_KURSACH
                             if (db.check_admin(textBox_login.Text.Trim(), textBox_password.Text.Trim()) == true)
                             {
                                 userForm.Close();
-                                adminForm.import(profilelogin, profilepassword);
                                 adminForm.Show();
                             }
                             else if (db.check_user(textBox_login.Text.Trim(), textBox_password.Text.Trim()) == true)
@@ -99,6 +98,7 @@ namespace PIKPO_KURSACH
                             }
                         }
                     }
+                    
                 }
                 else
                 {
@@ -112,19 +112,6 @@ namespace PIKPO_KURSACH
             }
             row.Close();
             con.Close();
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            /*SQLiteConnection login = new SQLiteConnection("Data Source = D:/C++ Project/PIKPO_KURSACH/database.db");
-            try
-            {
-                login.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Не удалось подключится к БД");
-            }*/
         }
     }
 }

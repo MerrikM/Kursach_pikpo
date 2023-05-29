@@ -13,10 +13,37 @@ namespace PIKPO_KURSACH.FormsForUserPanel
 {
     public partial class Profile : Form
     {
-        public Profile()
+        private SQLiteCommandBuilder builder = null;
+        private SQLiteDataAdapter sqliteDataAdapter = null;
+        private SQLiteConnection sQLiteConnection = null;
+        private DataSet dataSet = null;
+
+
+        Connection con = new Connection();
+        public Profile(string _l, string _p)
         {
             InitializeComponent();
             LoginForm loginform = new LoginForm();
+
+            importprof(_l, _p);
+            con.Open();
+            SQLiteDataReader row;
+            string query = "SELECT * FROM Users";
+            row = con.ExecuteReader(query);
+            //con.Open();
+            if(row.HasRows)
+            {
+                while(row.Read())
+                {
+                    if(row["login"].ToString() == login.Text)
+                    {
+                        count.Text = row["buy"].ToString();
+                        //count.Text = (Convert.ToInt32(count.Text) + Convert.ToInt32(buy)).ToString();
+                    }
+                }
+            }
+            row.Close();
+            con.Close();
         }
         public void importprof(string _l, string _p)
         {
@@ -27,5 +54,6 @@ namespace PIKPO_KURSACH.FormsForUserPanel
         {
             this.Close();
         }
+
     }
 }

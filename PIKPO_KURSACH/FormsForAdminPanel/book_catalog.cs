@@ -18,16 +18,31 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
         private SQLiteConnection sQLiteConnection = null;
         private DataSet dataSet = null;
         private bool cmdRow = false;
-
-
-        //Connection con = new Connection();
-
-
         public book_catalog()
         {
             InitializeComponent();
         }
+        private void UpdateData()
+        {
+            try
+            {
+                dataSet.Tables["Books"].Clear();
 
+                sqliteDataAdapter.Fill(dataSet, "Books");
+
+                dgvViewer.DataSource = dataSet.Tables["Books"];
+
+                for (int i = 0; i < dgvViewer.Rows.Count; i++)
+                {
+                    DataGridViewLinkCell link = new DataGridViewLinkCell();
+                    dgvViewer[6, i] = link;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Ошибка подключения к БД " + exp.Message);
+            }
+        }
         private void LoadData()
         {
             try
@@ -56,29 +71,6 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dataSet.Tables["Books"].Clear();
-
-                sqliteDataAdapter.Fill(dataSet, "Books");
-
-                dgvViewer.DataSource = dataSet.Tables["Books"];
-
-                for (int i = 0; i < dgvViewer.Rows.Count; i++)
-                {
-                    DataGridViewLinkCell link = new DataGridViewLinkCell();
-                    dgvViewer[6, i] = link;
-                }
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Ошибка подключения к БД " + exp.Message);
-            }
-        }
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Close();
@@ -101,7 +93,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
                             dataSet.Tables["Books"].Rows[rowIndex].Delete(); // Удаляем строку из датасет
                             sqliteDataAdapter.Update(dataSet, "Books"); // Обновляем БД
 
-                            Refresh();
+                            UpdateData();
                         }
                     }
                     else if (cmd == "Insert")
@@ -122,7 +114,7 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
                         sqliteDataAdapter.Update(dataSet, "Books");
                         cmdRow = false;
 
-                        Refresh();
+                        UpdateData();
                     }
                     else if (cmd == "Update")
                     {
@@ -134,10 +126,10 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
 
                         sqliteDataAdapter.Update(dataSet, "Books");
                         dgvViewer.Rows[e.RowIndex].Cells[6].Value = "Delete";
-                        Refresh();
+                        UpdateData();
                     }
 
-                    Refresh();
+                    UpdateData();
                 }
             }
             catch (Exception exp)
@@ -227,7 +219,6 @@ namespace PIKPO_KURSACH.FormsFromAdminPanel
             {
                 (dgvViewer.DataSource as DataTable).DefaultView.RowFilter = null;
             }
-
         }
     }
 }

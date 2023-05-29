@@ -26,35 +26,20 @@ namespace PIKPO_KURSACH
         {
             InitializeComponent();
         }
-
-        private void supplier_directory_Click(object sender, EventArgs e)
-        {
-            FormsFromAdminPanel.supplier_directory supplier_directory = new FormsFromAdminPanel.supplier_directory();
-            supplier_directory.Show();
-        }
-
         private void book_catalog_Click(object sender, EventArgs e)
         {
             FormsFromAdminPanel.book_catalog book_catalog = new FormsFromAdminPanel.book_catalog();
             book_catalog.Show();
         }
-
-        private void admission_Click(object sender, EventArgs e)
+        private void user_button_Click(object sender, EventArgs e)
         {
-            FormsFromAdminPanel.admission admission = new FormsFromAdminPanel.admission();
-            admission.Show();
+            FormsForAdminPanel.Users users = new FormsForAdminPanel.Users();
+            users.Show();
         }
 
-        private void sale_Click(object sender, EventArgs e)
+        private void exit_button_Click(object sender, EventArgs e)
         {
-            FormsFromAdminPanel.sale sale = new FormsFromAdminPanel.sale();
-            sale.Show();
-        }
-
-        private void search_Click(object sender, EventArgs e)
-        {
-            FormsFromAdminPanel.search search = new FormsFromAdminPanel.search();
-            search.Show();
+            Close();
         }
     }
 }
