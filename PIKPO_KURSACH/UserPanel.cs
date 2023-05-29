@@ -22,15 +22,18 @@ namespace PIKPO_KURSACH
 
         public string login;
         public string password;
+
         public void import(string _l, string _p)
         {
             login = _l;
             password = _p;
         }
+
         public UserPanel()
         {
             InitializeComponent();
         }
+
         private void UpdateData()
         {
             try
@@ -50,6 +53,7 @@ namespace PIKPO_KURSACH
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
+
         private void LoadData()
         {
             try
@@ -71,6 +75,7 @@ namespace PIKPO_KURSACH
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
+
         private void UserPanel_Load(object sender, EventArgs e)
         {
             sQLiteConnection = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
@@ -78,15 +83,18 @@ namespace PIKPO_KURSACH
             LoadData();
             sQLiteConnection.Close();
         }
+
         private void button_profile_Click(object sender, EventArgs e)
         {
             FormsForUserPanel.Profile profile = new FormsForUserPanel.Profile(login, password);
             profile.Show();
         }
+
         private void button_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void dgvViewer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -143,6 +151,7 @@ namespace PIKPO_KURSACH
                 MessageBox.Show("Ошибка подключения к БД " + exp.Message);
             }
         }
+
         private void search_button_Click(object sender, EventArgs e)
         {
             if (search_textBox1.Text != "")

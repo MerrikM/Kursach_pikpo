@@ -15,6 +15,7 @@ namespace PIKPO_KURSACH
     {
         //SQLiteConnection conn = new SQLiteConnection("Data Source = D:/DB/database.db");
         SQLiteConnection conn = new SQLiteConnection("Data Source = C:/Users/merri/Desktop/kurshach/Kursach_pikpo/PIKPO_KURSACH/DataBase/database.db");
+
         public bool Open()
         {
             try
@@ -29,11 +30,13 @@ namespace PIKPO_KURSACH
             }
             return false;
         }
+
         public void Close()
         {
             conn.Close();
             conn.Dispose();
         }
+
         public DataSet ExecuteDataSet(string sql)
         {
             try
@@ -49,6 +52,7 @@ namespace PIKPO_KURSACH
             }
             return null;
         }
+
         public SQLiteDataReader ExecuteReader(string sql)
         {
             try
@@ -64,6 +68,7 @@ namespace PIKPO_KURSACH
             }
             return null;
         }
+
         public int ExecuteNonQuery(string sql)
         {
             try

@@ -15,7 +15,6 @@ namespace PIKPO_KURSACH
     {
         //private SQLiteConnection login = new SQLiteConnection("Data Source = D:/C++ Project/PIKPO_KURSACH/database.db");
         Connection con = new Connection();
-        string id, login, password;
         public string profilelogin, profilepassword;
 
         DB db = new DB();
